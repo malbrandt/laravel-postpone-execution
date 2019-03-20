@@ -9,8 +9,8 @@ use Malbrandt\Laravel\PostponeInvoke\Events\InvokedPostponed;
  * Handles execution postponing, invokes postponed methods and raises proper
  * events.
  *
- * @package Malbrandt\Lori\Utils
  * @author  Marek Malbrandt <marek.malbrandt@gmail.com>
+ *
  * @see     \postponer()
  * @see     \postpone()
  */
@@ -35,7 +35,7 @@ class InvokePostponerTest extends TestCase
 
         $this->assertNotEquals(
             'bar',
-            InvokePostponerTest::$GLOBAL_VARIABLE,
+            self::$GLOBAL_VARIABLE,
             'Value was changed immediately.'
         );
 
@@ -45,7 +45,7 @@ class InvokePostponerTest extends TestCase
 
         $this->assertEquals(
             'bar',
-            InvokePostponerTest::$GLOBAL_VARIABLE,
+            self::$GLOBAL_VARIABLE,
             'Value remains unchanged.'
         );
     }
@@ -54,7 +54,7 @@ class InvokePostponerTest extends TestCase
     public function invoke_methods_immediately_when_postponing_is_turned_off()
     {
         postponer()->isEnabled(false);
-        $this->assertEquals('foo', InvokePostponerTest::$GLOBAL_VARIABLE);
+        $this->assertEquals('foo', self::$GLOBAL_VARIABLE);
 
         postpone(function () {
             InvokePostponerTest::$GLOBAL_VARIABLE = 'bar';
@@ -62,7 +62,7 @@ class InvokePostponerTest extends TestCase
 
         $this->assertEquals(
             'bar',
-            InvokePostponerTest::$GLOBAL_VARIABLE,
+            self::$GLOBAL_VARIABLE,
             'Value was not changed immediately.'
         );
     }
@@ -122,6 +122,6 @@ class InvokePostponerTest extends TestCase
     protected function setUp(): void
     {
         parent::setUp();
-        InvokePostponerTest::$GLOBAL_VARIABLE = 'foo';
+        self::$GLOBAL_VARIABLE = 'foo';
     }
 }

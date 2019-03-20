@@ -9,7 +9,6 @@ use Illuminate\Queue\SerializesModels;
 /**
  * Event that occurs after postponed callable invoke.
  *
- * @package Malbrandt\Laravel\PostponeInvoke\Events
  * @author  Marek Malbrandt <marek.malbrandt@gmail.com>
  */
 class InvokedPostponed

@@ -17,7 +17,6 @@ use Malbrandt\Laravel\PostponeInvoke\Events\InvokedPostponed;
  * TODO: DTOs/class wrappers around postponed callables?
  * TODO: Any suggestions? What to we need?
  *
- * @package Malbrandt\Laravel\PostponeInvoke
  * @author  Marek Malbrandt <marek.malbrandt@gmail.com>
  */
 class InvokePostponer implements PostponesInvoke
@@ -48,23 +47,23 @@ class InvokePostponer implements PostponesInvoke
      * event if specified), so it will not affect the response time. It
      * require valid PHP's callable.
      *
-     * @param callable       $callable      Callable to postpone invoke. To get
-     *                                      know what values you can pass,
-     *                                      check PHP's manual:
-     *                                      http://php.net/manual/en/language.types.callable.php.
-     * @param array|\Closure $args          (Optional) Arguments passed as an
-     *                                      array or callable that returns
-     *                                      array with arguments. Closure would
-     *                                      be called right before execution
-     *                                      deferred function.
-     *
-     * @param string         $event         The name of event, after which
-     *                                      callable should be invoked.
-     * @param string|null    $name          Unique identifier of postpone (i.e.
-     *                                      to identify it later in event, to
-     *                                      get know how to deal with results).
+     * @param callable       $callable Callable to postpone invoke. To get
+     *                                 know what values you can pass,
+     *                                 check PHP's manual:
+     *                                 http://php.net/manual/en/language.types.callable.php.
+     * @param array|\Closure $args     (Optional) Arguments passed as an
+     *                                 array or callable that returns
+     *                                 array with arguments. Closure would
+     *                                 be called right before execution
+     *                                 deferred function.
+     * @param string         $event    The name of event, after which
+     *                                 callable should be invoked.
+     * @param string|null    $name     Unique identifier of postpone (i.e.
+     *                                 to identify it later in event, to
+     *                                 get know how to deal with results).
      *
      * @see \postpone() Helper function (alias) for this method
+     *
      * @return InvokePostponer instance for chaining (fluent)
      */
     public function postpone(

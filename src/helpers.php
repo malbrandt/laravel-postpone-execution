@@ -14,6 +14,7 @@ if (!function_exists('postpone')) {
      *                                      right before execution deferred function.
      *
      * @return \Malbrandt\Laravel\PostponeInvoke\InvokePostponer
+     *
      * @see     \postponer()
      */
     function postpone(
@@ -30,6 +31,7 @@ if (!function_exists('postponer')) {
      * Returns (singleton) instance of PostponedInvoke impl. Helper alias function.
      *
      * @return \Malbrandt\Laravel\PostponeInvoke\InvokePostponer
+     *
      * @see   \postpone()
      */
     function postponer()

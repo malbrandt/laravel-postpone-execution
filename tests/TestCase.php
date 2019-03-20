@@ -2,7 +2,6 @@
 
 namespace Malbrandt\Laravel\PostponeInvoke\Tests;
 
-
 use Malbrandt\Laravel\PostponeInvoke\ServiceProvider;
 use Orchestra\Testbench\TestCase as OrchestraTestCase;
 
