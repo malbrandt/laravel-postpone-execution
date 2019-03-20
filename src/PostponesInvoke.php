@@ -2,7 +2,6 @@
 
 namespace Malbrandt\Laravel\PostponeInvoke;
 
-
 interface PostponesInvoke
 {
     /**
